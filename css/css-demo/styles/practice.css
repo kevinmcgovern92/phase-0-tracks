@@ -7,3 +7,12 @@
   padding: 20px;
   margin-bottom: 10px;
 }
+.list{
+  font-size: .8em;
+}
+h3:first-letter{
+  font-size: 1.75em;
+}
+section>section{
+  outline: 1px solid red;
+}

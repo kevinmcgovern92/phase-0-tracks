@@ -1,0 +1,67 @@
+Algorithm for robot to use elevator.
+- Each time human needs to move floors:
+  - Approach elevator bay and ask human "Going  up or down?"
+    - If the response is "up":
+      - Press the higher of two buttons on the  panel
+    - If the response is "down":
+      - Press the lower of the two buttons on   the panel
+  - When elevator door opens, move inside and ask "What floor?"
+    - If the response is "lobby":
+      - Press the button marked with "L" or emblazoned with a star
+      - Follow human after it leaves elevator
+    - If the response is "basement":
+      - Press the button marked with a "B"
+      - Follow human after it leaves elevator
+    - If the resopnse is "mezzanine":
+      - "Press the button marked with "N"
+      - Follow human after it leaves elevator
+    - If the response is "roof":
+      - Press the button marked "R"
+      - Follow human after it leaves elevator
+      - If "R" is not an option:
+        - Press the button with the highest numerical value
+        - Follow human after it leaves elevator
+    - If the response is a numerical value:
+      - Locate the button corresponding to the numerical value
+      - Press appropriate button
+      - Follow human after it leaves elevator
+    - Otherwise:
+      - Say "Does not compute"
+      - Power down
+
+Algorithm for making coffe
+- Examine coffee tin
+  - Until coffe tin is half-full:
+   - If coffee tin is empty:
+     - Go to coffee bag
+       - If bag is not empty:
+         - Pour whole beans into grinder
+         - Grind until coarse
+         - Pour grounds into coffee tin
+       - If bag is empty:
+        - Go to store
+        - Buy a pound of coffee beans and a coffee
+    - If coffee tin is not empty but less than half full:
+      - Go to coffee bag
+       - If bag is not empty:
+         - Pour whole beans into grinder
+         - Grind until coarse
+         - Pour grounds into coffee tin
+      - If bag is empty:
+        - Go to store
+        - Buy a pound of coffee beans and a coffee
+  - While  coffee tin is at least half-full:
+    - Fill coffee pitcher with 6 cups of water
+    - Pour water into coffee maker reservoir
+    - Measure out 2 Tbsp of ground coffee
+    - Pour coffee into filter
+    - Move water spout above filter
+    - Close top and turn on the coffee machine
+    - Wait until coffee has finished brewing
+    - Pour into mug
+    - Enjoy!
+  - When coffee pitcher is empty:
+    - Turn machine off
+    - Throw out filter and grounds
+    - Place new filter in machine
+    - Rinse out coffee pitcher

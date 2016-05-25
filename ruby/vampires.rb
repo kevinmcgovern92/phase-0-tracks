@@ -23,36 +23,24 @@ def interview
     end
   current_year = 2016
   if
-    (age+birth_year == current_year) && (garlic_pref = true || insurance = true)
-    vampire_grade = 1
+    (age+birth_year == current_year) && (garlic_pref == true || insurance == true)
+    puts "Probably not a vampire"
   elsif
-    (age+birth_year != current_year) && (garlic_pref = false || insurance = false)
-    vampire_grade = 2
+    (age+birth_year != current_year) && (garlic_pref == false || insurance == false)
+    puts "Probably a vampire"
   elsif
-    (age+birth_year != current_year) && (garlic_pref = false && insurance = false)
-    vampire_grade = 3
+    (age+birth_year != current_year) && (garlic_pref == false && insurance == false)
+    puts "Almost certainly a vampire"
   elsif
-    name = "Drake Cula", "Tu Fang"
-    vampire_grade = 4
-  else
-    vampire_grade = nil
-  end
-  case vampire_grade
-  when
-    vampire_grade = 1
-      puts "Probably not a vampire"
-  when
-    vampire_grade = 2
-      puts "Probably a vampire"
-  when
-    vampire_grade = 3
-      puts "Almost certainly a vampire"
-  when
-    vampire_grade = 4
+    case name
+    when "Drake Cula", "Tu Fang"
       puts "Definitely a vampire"
-  when
-    vampire_grade = nil
-      puts "Results inconclusive"
-end
+    else
+      nil
+    end
+  else
+    puts "Results inconclusive"
+  end
+
 
 end

@@ -26,10 +26,10 @@ def interview
     (age+birth_year == current_year) && (garlic_pref = true || insurance = true)
     vampire_grade = 1
   elsif
-    (age+birth_year == current_year) && (garlic_pref = false || insurance = false)
+    (age+birth_year != current_year) && (garlic_pref = false || insurance = false)
     vampire_grade = 2
   elsif
-    (age+birth_year == current_year) && (garlic_pref = false && insurance = false)
+    (age+birth_year != current_year) && (garlic_pref = false && insurance = false)
     vampire_grade = 3
   elsif
     name = "Drake Cula", "Tu Fang"

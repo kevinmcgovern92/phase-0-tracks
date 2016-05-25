@@ -16,9 +16,7 @@ main{
   position: relative;
   /* display: block; */
 }
-.column-1 h2 {
-  color: pink;
-}
+
 .column-1, .column-2 {
   display: inline-block;
   width: 45%;

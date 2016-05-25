@@ -1,0 +1,45 @@
+body {
+  background-color: green;
+  max-width: 80%;
+  margin: auto;
+}
+a:hover{
+  color: orange;
+}
+header {
+  background-color: blue;
+  padding: 10px;
+  margin: auto;
+}
+
+main{
+  position: relative;
+  /* display: block; */
+}
+.column-1 h2 {
+  color: pink;
+}
+.column-1, .column-2 {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  background-color: red;
+  padding: 2%;
+/*   top: 0;
+  left: 0;
+  position: absolute; */
+}
+
+.column-2 {
+  float: right;
+}
+
+footer {
+ /* margin: 25px; */
+  text-align: center;
+  background-color: red;
+  clear: both;
+  padding-top: 25px;
+/*   position: absolute;
+  bottom: 0; */
+}

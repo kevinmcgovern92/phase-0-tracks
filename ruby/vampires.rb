@@ -32,26 +32,39 @@ def interview
       no_nothing = false
     end
     current_year = 2016
-    if
-      (age+birth_year == current_year) && ( garlic_pref == true || insurance == true )
-      puts "Probably not a vampire"
-    elsif
-      (age+birth_year != current_year) && ( garlic_pref == false || insurance ==   false) && no_nothing == false
-      puts "Probably a vampire"
-    elsif
-      (age+birth_year != current_year) && (no_nothing == true)
-      puts "Almost certainly a vampire"
-    elsif
-      case name
-      when "Drake Cula", "Tu Fang"
-        puts "Definitely a vampire"
-      else
-        nil
+    puts "Do you have any allergies we should be aware of? Type 'done' when finished."
+    allergy = gets.chomp
+    until allergy == "done"
+      if allergy == "sunshine"
+        puts "Almost certainly a vampire"
+        break
       end
-    else
-      puts "Results inconclusive"
+      puts "Do you have any allergies we should be aware of? Type 'done' when finished."
+      allergy = gets.chomp
+    end
+    unless allergy == "sunshine"
+      if
+        (age+birth_year == current_year) && (   garlic_pref == true || insurance ==   true )
+        puts "Probably not a vampire"
+      elsif
+        (age+birth_year != current_year) && (   garlic_pref == false || insurance ==     false) && no_nothing == false
+        puts "Probably a vampire"
+      elsif
+        (age+birth_year != current_year) && ( no_nothing == true)
+        puts "Almost certainly a vampire"
+      elsif
+        case name
+        when "Drake Cula", "Tu Fang"
+          puts "Definitely a vampire"
+        else
+          nil
+        end
+      else
+        puts "Results inconclusive"
+      end
     end
   ppl_processed +=1
   end
+  puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends"
 
 end

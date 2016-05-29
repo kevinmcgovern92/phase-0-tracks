@@ -5,7 +5,8 @@
 def encrypt(password)
   index = 0
   while index < password.length
-    password[index] = password[index].next
+    password[index] = password[index].next!
     index +=1
   end
+  puts password
 end

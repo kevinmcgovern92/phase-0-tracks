@@ -6,9 +6,13 @@ def encrypt(password)
   index = 0
   while index < password.length
     password[index] = password[index].next!
+    if
+      password[index] == "!"
+      password[index] = " "
+    end
     index +=1
   end
-  puts password
+puts password
 end
 
 #Pseudo code for decrypt method

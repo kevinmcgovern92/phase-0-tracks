@@ -10,3 +10,20 @@ def encrypt(password)
   end
   puts password
 end
+
+#Pseudo code for decrypt method
+# Evaluate string
+# Move backwards one letter in the alphabet for each letter in string
+
+def decrypt(password)
+  index = 0
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  while index < password.length
+  letters = password[index]
+  number = alphabet.index(letters)
+  new_number = number - 1
+  password[index] = alphabet[new_number]
+  index += 1
+  end
+ puts password
+  end

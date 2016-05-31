@@ -17,7 +17,7 @@
 "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+"the usual".insert(-1, " suspects")
 #=> "the usual suspects"
 
 " suspects".prepend("the usual")
@@ -27,7 +27,7 @@
 "The case of the disappearing last letter".chomp("r")
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter".delete("T")
 # => "he mystery of the missing first letter"
 
 "Elementary,    my   dear        Watson!".squeeze(" ")

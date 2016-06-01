@@ -28,9 +28,10 @@ def design_template
   u_age = gets.chomp
   puts "How many children do they have?"
   u_children = gets.chomp.downcase!
-    if u_children == "none"
-      u_children = 0 ### 0 evaluates as nil and isn't represented when printing the hash values at the end###
-    else
+    if u_children == "0"
+      u_children = "No Children"
+      ### Lines 31 & 32 are there because the integer 0 returns nil as a value and makes printing the hash problematic###
+     else
       u_children.to_i
     end
   puts "What theme interests the client?"
@@ -50,5 +51,16 @@ def design_template
     theme: u_theme,
     layout: u_layout
   }
+  template.each_value{|value| puts value}
+  puts "Which datapoint would you like to edit?"
+  edit = gets.chomp.downcase.intern
+  if
+    template.has_key?(edit)
+    puts "What is the new value?"
+    new_value = gets.chomp
+    template[edit] = new_value
+  else
+    puts "Okay, here are those values again"
+  end
   template.each_value{|value| puts value}
 end

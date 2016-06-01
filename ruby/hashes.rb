@@ -23,24 +23,32 @@
 def design_template
   template = Hash.new
   puts "What is the client's name?"
-  name = gets.chomp
+  u_name = gets.chomp
   puts "How old is the client?"
-  age = gets.chomp
+  u_age = gets.chomp
   puts "How many children do they have?"
-  children = gets.chomp.downcase!
-    if children == "none"
-      children = 0
+  u_children = gets.chomp.downcase!
+    if u_children == "none"
+      u_children = 0 ### 0 evaluates as nil and isn't represented when printing the hash values at the end###
     else
-      children.to_i
+      u_children.to_i
     end
   puts "What theme interests the client?"
-  theme = gets.chomp
+  u_theme = gets.chomp
   puts "Does the client like open layouts?"
-  layout = gets.chomp.downcase!
+  u_layout = gets.chomp.downcase!
     if
-      layout == "yes"
-      layout = true
+      u_layout == "yes"
+      u_layout = true
     else
-      layout = false
+      u_layout = false
     end
+  template = {
+    name: u_name,
+    age: u_age,
+    children: u_children,
+    theme: u_theme,
+    layout: u_layout
+  }
+  template.each_value{|value| puts value}
 end

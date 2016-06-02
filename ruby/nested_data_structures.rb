@@ -69,3 +69,21 @@ coloring_book = {
     length: "4:17"
   }
 }
+
+#Code to return "Lil Wayne"
+coloring_book[:track_two][:artists][1]
+
+#Code to return all data for track 6
+coloring_book[:track_six]
+
+#Code to return array of producers on first 2 tracks
+some_producers = (coloring_book[:track_one][:producers] + coloring_book[:track_two][:producers])
+  p some_producers
+
+# Code to return all track titles as a string
+tracklist =
+  coloring_book[:track_one][:title]+ ", "+ coloring_book[:track_two][:title]+ ", "+ coloring_book[:track_three][:title]+ ", "+ coloring_book[:track_four][:title] + ", "+ coloring_book[:track_five][:title]+ ", "+ coloring_book[:track_six][:title]
+
+p tracklist
+# Went through a few different versions trying to make this code more readable, and when I put line breaks before each + I got an error of undefined method `+@' for ", ":String(repl):74:in `initialize''
+# Going to look into this more

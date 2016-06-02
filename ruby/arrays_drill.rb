@@ -1,3 +1,13 @@
+def add_to_array(x, y)
+  two_arrays = x + [y]
+  p two_arrays
+end
+
+add_to_array([1, 2, 4], 9)
+add_to_array(["Monday", "Wednesday", "Friday"], true )
+
+
+
 def build_array(item_one, item_two, item_three)
   method_array = [item_one, item_two, item_three]
   p method_array

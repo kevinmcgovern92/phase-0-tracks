@@ -1,3 +1,12 @@
+def build_array(item_one, item_two, item_three)
+  method_array = [item_one, item_two, item_three]
+  p method_array
+end
+
+build_array("one", "two", "three")
+
+
+
 my_array = []
 
 p my_array

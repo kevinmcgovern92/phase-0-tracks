@@ -47,17 +47,32 @@ def next_consonant (last_first)
 end
 
 def alias_interface
+  fake_data = {}
   puts "Enter your name, agent:"
   name = gets.chomp
   alias_creator(name)
-  puts "If you are satisfied, type quit. Otherwise, enter another name to continue"
-  answer = gets.chomp.downcase!
+  answer = " "
+  # Line 56 exists because storing data in the hash returns it a second time. I haven't been able to figure out a way to populate the hash without returning alias_creator(name) again
+  puts "Again, that is:"
+  c_array = name.split(' ')
+  c_array.map! {|word| word.capitalize}
+  d_array = c_array * " "
+  fake_data.store(d_array, alias_creator(name))
   until answer == "quit"
-    alias_creator(answer)
     puts "If you are satisfied, type quit. Otherwise, enter another name to continue"
-  answer = gets.chomp.downcase!
-  alias_creator(answer)
-    puts "If you are satisfied, type quit. Otherwise, enter another name to continue"
-  answer = gets.chomp.downcase!
+    answer = gets.chomp
+    if
+      answer == "quit"
+      break
+    else
+      answer.downcase!
+      alias_creator(answer)
+      puts "Again, that is:"
+      a_array = answer.split(" ")
+      a_array.map! {|word| word.capitalize}
+      b_array = a_array * " "
+      fake_data.store(b_array, alias_creator(answer) )
+    end
   end
+  fake_data.each {|new_n, old| p "#{old} is actually #{new_n}!"}
 end

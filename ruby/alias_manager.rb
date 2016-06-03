@@ -52,7 +52,7 @@ def alias_interface
   name = gets.chomp
   alias_creator(name)
   answer = " "
-  # Line 56 exists because storing data in the hash returns it a second time. I haven't been able to figure out a way to populate the hash without returning alias_creator(name) again
+# Line 56 exists because storing data in the hash returns it a second time. I haven't been able to figure out a way to populate the hash without returning alias_creator(name) again
   puts "Again, that is:"
   c_array = name.split(' ')
   c_array.map! {|word| word.capitalize}
@@ -67,6 +67,7 @@ def alias_interface
     else
       answer.downcase!
       alias_creator(answer)
+# Line 71 exists because storing data in the hash returns it a second time. I haven't been able to figure out a way to populate the hash without returning alias_creator(name) again
       puts "Again, that is:"
       a_array = answer.split(" ")
       a_array.map! {|word| word.capitalize}

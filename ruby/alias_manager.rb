@@ -11,9 +11,8 @@
 # Use capitalize method before returning new name
 # Return new name
 
-def alias_creator
-  puts "Input name, agent:"
-  name = gets.chomp.downcase!
+def alias_creator(name)
+  name.downcase!
   name_array = name.split(' ')
   name_array.reverse!
   # insert method for changing vowels here
@@ -49,5 +48,21 @@ end
 def next_consonant (last_first)
   last_first.map! do |word|
     word.gsub(/[zdhntbcfgjklmpqrsvwxy]/, 'z' => 'b', 'd' => 'f', 'h' => 'j', 'n' => 'p', 't' => 'v', 'b' => 'c', 'c' => 'd', 'f' => 'g', 'g' => 'h', 'j' => 'k', 'k' => 'l', 'l' => 'm', 'm' => 'n', 'p' => 'q', 'q' => 'r', 'r' => 's', 's' => 't', 'v' => 'w', 'w' => 'x', 'x' => 'y', 'y' => 'z')
+  end
+end
+
+def alias_interface
+  puts "Enter your name, agent:"
+  name = gets.chomp
+  alias_creator(name)
+  puts "If you are satisfied, type quit. Otherwise, enter another name to continue"
+  answer = gets.chomp.downcase!
+  until answer == "quit"
+    alias_creator(answer)
+    puts "If you are satisfied, type quit. Otherwise, enter another name to continue"
+  answer = gets.chomp.downcase!
+  alias_creator(answer)
+    puts "If you are satisfied, type quit. Otherwise, enter another name to continue"
+  answer = gets.chomp.downcase!
   end
 end

@@ -26,10 +26,9 @@ def alias_creator(name)
 end
 
 #Pseudocode for next_vowel method
-# I want to say: if one of the items in the array has a character that matches this string, then replace that character with the next character in this string
-# I think the vowels.next should be pretty simple (will have to try using all vowels though)
-# The comparison will certainly be the tough part. There has to be a more elegant way to do it than everything that went into the decrypt method
+# If one of the items in the array has a character that matches this string, then replace that character with the next character in this string
 # Abandoning regexp matchdata
+# Found #gsub method, works much better
 
 def next_vowel(last_first)
   last_first.map! do |word|
@@ -37,13 +36,9 @@ def next_vowel(last_first)
   end
 end
 
-# Potential issue with this code: unsure how I will have the return store in something that I can use. How do you have the output of a method get interat with other code? (This is a stupid and basic question)
-
 #Pseudocode for next_consonant
-# Don't think it will be very similar to next_vowel
-# This is ripe for an if/else statement
-  # else word[index].next
-# Because I sorta skipped the step of identifying vowels and instead
+# Identify edge cases first, make them work
+# Use while/index/if to iterate through other letters
 # Ran into issues with while/index/if based iteration, so just hardcoded it the long way
 def next_consonant (last_first)
   last_first.map! do |word|

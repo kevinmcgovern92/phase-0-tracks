@@ -17,10 +17,13 @@ def alias_creator
   name_array = name.split(' ')
   name_array.reverse!
   # insert method for changing vowels here
-  next_vowel(name_array)
-  # insert method for changing consonants here
-
-
+  post_vowels = next_vowel(name_array)
+  # insert method for changing consonants here#
+  new_name = next_consonant(post_vowels)
+  # re-capitalize the first letter of each name
+  new_name.map! {|word| word.capitalize}
+  # take our array and turn it into a string
+  p new_name * " "
 end
 
 #Pseudocode for next_vowel method
@@ -42,5 +45,9 @@ end
 # This is ripe for an if/else statement
   # else word[index].next
 # Because I sorta skipped the step of identifying vowels and instead
-if word[index] == ("z" || "d" || "h" || "n" || "t")
-    word.gsub(/[zdhnt]/, 'z' => 'b', 'd' => 'f', 'h' => 'j', 'n' => 'p', 't' => 'v')
+# Ran into issues with while/index/if based iteration, so just hardcoded it the long way
+def next_consonant (last_first)
+  last_first.map! do |word|
+    word.gsub(/[zdhntbcfgjklmpqrsvwxy]/, 'z' => 'b', 'd' => 'f', 'h' => 'j', 'n' => 'p', 't' => 'v', 'b' => 'c', 'c' => 'd', 'f' => 'g', 'g' => 'h', 'j' => 'k', 'k' => 'l', 'l' => 'm', 'm' => 'n', 'p' => 'q', 'q' => 'r', 'r' => 's', 's' => 't', 'v' => 'w', 'w' => 'x', 'x' => 'y', 'y' => 'z')
+  end
+end

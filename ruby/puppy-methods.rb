@@ -30,3 +30,27 @@ rex.speak(5)
 rex.roll_over
 rex.dog_years(7)
 rex.heel
+
+class Student
+  def initialize
+    puts "Creating a student."
+  end
+
+  def study(hours)
+    hours.times { puts "Studied for an hour." }
+  end
+
+  def party(drinks)
+    puts "Partied hard. Drank #{drinks} drinks."
+  end
+
+end
+
+student_body = []
+
+50.times { student_body << Student.new  }
+
+student_body.each do |s|
+  s.study(3)
+  s.party(5)
+end

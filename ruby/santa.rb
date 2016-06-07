@@ -7,4 +7,7 @@ class Santa
     puts "That was a good #{cookie_type}"
   end
 
+  def initialize
+    puts "Initializing Stanta instance..."
+  end
 end

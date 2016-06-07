@@ -10,13 +10,28 @@ class Santa
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
-    puts "Initializing Stanta instance for a #{@gender} #{@ethnicity}..."
+    puts "Initializing Stanta instance..."
   end
+
+  def sound_off
+    puts "I am #{@gender} and #{@ethnicity}, and proud!"
+  end
+
   @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   @age = 0
 
 end
 
-kris = Santa.new("Male", "Caucasian")
-kris.speak
-kris.eat_milk_and_cookies("Oatmeal butterscotch cookie")
+#kris = Santa.new("Male", "Caucasian")
+#kris.speak
+#kris.eat_milk_and_cookies("Oatmeal butterscotch cookie")
+santas = []
+genders = ["sex", "female", "male", "gender fluid", "gender queer", "trans", "none of your business!"]
+ethnicities = ["white", "black", "latino", "native american", "Samoan", "Rasta", "none of your business!"]
+# Is there a reason that an array is preferable to a hash here? Maybe because we want to be able to see all the values of the array for
+genders.length.times do |i|
+  santas << Santa.new(genders[i], ethnicities[i])
+end
+santas.each do santa
+  santa.sound_off
+end

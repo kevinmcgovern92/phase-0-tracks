@@ -7,11 +7,16 @@ class Santa
     puts "That was a good #{cookie_type}"
   end
 
-  def initialize
-    puts "Initializing Stanta instance..."
+  def initialize(gender, ethnicity)
+    @gender = gender
+    @ethnicity = ethnicity
+    puts "Initializing Stanta instance for a #{@gender} #{@ethnicity}..."
   end
+  @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+  @age = 0
+
 end
 
-kris = Santa.new
+kris = Santa.new("Male", "Caucasian")
 kris.speak
 kris.eat_milk_and_cookies("Oatmeal butterscotch cookie")

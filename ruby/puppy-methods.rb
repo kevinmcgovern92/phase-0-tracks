@@ -18,6 +18,10 @@ class Puppy
   def heel
     puts "I like walking next to my human"
   end
+
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
 end
 
 rex = Puppy.new

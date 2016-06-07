@@ -14,7 +14,7 @@ class Santa
   end
 
   def sound_off
-    puts "I am #{@gender} and #{@ethnicity}, and proud!"
+    puts "I am #{@gender} and #{@ethnicity}, and a proud Santa!"
   end
 
   @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -29,8 +29,14 @@ santas = []
 genders = ["sex", "female", "male", "gender fluid", "gender queer", "trans", "none of your business!"]
 ethnicities = ["white", "black", "latino", "native american", "Samoan", "Rasta", "none of your business!"]
 # Is there a reason that an array is preferable to a hash here? Maybe because we want to be able to see all the values of the array for
-genders.length.times do |i|
-  santas << Santa.new(genders[i], ethnicities[i])
+if genders.length > ethnicities.length
+  genders.length.times do |i|
+    santas << Santa.new(genders[i], ethnicities[i])
+  end
+else
+  ethnicities.length.times do |i|
+    santas << Santa.new(genders[i], ethnicities[i])
+  end
 end
 santas.each do |santa|
   santa.sound_off

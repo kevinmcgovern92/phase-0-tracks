@@ -32,6 +32,6 @@ ethnicities = ["white", "black", "latino", "native american", "Samoan", "Rasta",
 genders.length.times do |i|
   santas << Santa.new(genders[i], ethnicities[i])
 end
-santas.each do santa
+santas.each do |santa|
   santa.sound_off
 end

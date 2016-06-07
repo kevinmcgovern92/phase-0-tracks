@@ -10,8 +10,13 @@ class Puppy
   def roll_over
     puts "*rolls over*"
   end
+
   def dog_years(x)
     p x*7
+  end
+
+  def heel
+    puts "I like walking next to my human"
   end
 end
 
@@ -20,3 +25,4 @@ rex.fetch("ball")
 rex.speak(5)
 rex.roll_over
 rex.dog_years(7)
+rex.heel

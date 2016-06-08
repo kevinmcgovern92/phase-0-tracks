@@ -47,6 +47,10 @@ class Santa
     @ethnicity
   end
 
+  def gender
+    @gender
+  end
+
 end
 
 kris = Santa.new("Male", "Caucasian")
@@ -73,3 +77,4 @@ kris.celebrate_birthday
 kris.change_gender= "Prince"
 kris.age
 kris.ethnicity
+puts "This Santa is #{kris.age}, #{kris.ethnicity}, and #{kris.gender}"

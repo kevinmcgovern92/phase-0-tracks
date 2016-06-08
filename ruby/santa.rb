@@ -57,7 +57,7 @@ santas = []
 genders = ["Some sex", "Female", "Male", "Gender Fluid", "Gender Queer", "Trans", "None of your business!"]
 ethnicities = ["White", "Black", "Latino", "Native American", "Samoan", "Rasta", "none of your business!", "Persian", "Russian", "Irish"]
 
-10.times do
+100.times do
   santas << Santa.new(genders.sample, ethnicities.sample)
 end
 

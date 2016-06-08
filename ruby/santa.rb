@@ -35,6 +35,11 @@ class Santa
     p @reindeer_ranking
   end
 
+  def change_gender=(new_gender)
+    @gender = new_gender
+    p @gender
+  end
+
 end
 
 #kris = Santa.new("Male", "Caucasian")

@@ -56,15 +56,15 @@ kris = Santa.new("Male", "Caucasian")
 #genders = ["some sex", "female", "male", "#gender fluid", "gender queer", "trans", "#none of your business!"]
 #ethnicities = ["white", "black", "latino", "#native american", "Samoan", "Rasta", "none #of your business!"]
 # Is there a reason that an array is preferable to a hash here? Maybe because we want to be able to see all the values of the array for demographics?
-if genders.length > ethnicities.length
-  genders.length.times do |i|
-    santas << Santa.new(genders[i], ethnicities[i])
-  end
-else
-  ethnicities.length.times do |i|
-    santas << Santa.new(genders[i], ethnicities[i])
-  end
-end
+#if genders.length > ethnicities.length
+#  genders.length.times do |i|
+#    santas << Santa.new(genders[i], #ethnicities[i])
+#  end
+#else
+#  ethnicities.length.times do |i|
+#    santas << Santa.new(genders[i], #ethnicities[i])
+#  end
+#end
 #santas.each do |santa|
 #  santa.sound_off
 #end

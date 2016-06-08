@@ -10,6 +10,8 @@ class Santa
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
     puts "Initializing Stanta instance..."
   end
 
@@ -17,8 +19,21 @@ class Santa
     puts "I am #{@gender} and #{@ethnicity}, and a proud Santa!"
   end
 
-  @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-  @age = 0
+  def celebrate_birthday
+    @age += 1
+  end
+
+   def get_mad_at(name)
+    @reindeer_ranking.map do |reindeer|
+      if reindeer != name
+        next
+      else
+        @reindeer_ranking.delete(name)
+        @reindeer_ranking << name
+      end
+    end
+    p @reindeer_ranking
+  end
 
 end
 
@@ -26,9 +41,9 @@ end
 #kris.speak
 #kris.eat_milk_and_cookies("Oatmeal butterscotch cookie")
 santas = []
-genders = ["sex", "female", "male", "gender fluid", "gender queer", "trans", "none of your business!"]
+genders = ["some sex", "female", "male", "gender fluid", "gender queer", "trans", "none of your business!"]
 ethnicities = ["white", "black", "latino", "native american", "Samoan", "Rasta", "none of your business!"]
-# Is there a reason that an array is preferable to a hash here? Maybe because we want to be able to see all the values of the array for
+# Is there a reason that an array is preferable to a hash here? Maybe because we want to be able to see all the values of the array for demographics?
 if genders.length > ethnicities.length
   genders.length.times do |i|
     santas << Santa.new(genders[i], ethnicities[i])

@@ -18,7 +18,7 @@ class Santa
   end
 
   def sound_off
-    puts "I am #{@gender} and #{@ethnicity}, and a proud Santa!"
+    puts "I identify as #{@gender} for gender and #{@ethnicity} for my ethnicity. I am a proud Santa!"
   end
 
   def celebrate_birthday
@@ -37,20 +37,9 @@ class Santa
     p @reindeer_ranking
   end
 
-  def change_gender=(new_gender)
-    @gender = new_gender
-    p @gender
-  end
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
-  def gender
-    @gender
+  def age_generator
+    @age = Random.rand(140)
+    puts "My age is #{@age} years old!"
   end
 
 end
@@ -74,9 +63,12 @@ kris = Santa.new("Male", "Caucasian")
 #santas.each do |santa|
 #  santa.sound_off
 #end
-kris.get_mad_at("Rudolph")
-kris.celebrate_birthday
-kris.change_gender= "Prince"
-kris.age
-kris.ethnicity
-puts "This Santa is #{kris.age}, #{kris.ethnicity}, and #{kris.gender}"
+
+
+# Driver code for release
+#kris.get_mad_at("Rudolph")
+#kris.celebrate_birthday
+#kris.change_gender= "Prince"
+#kris.age
+#kris.ethnicity
+#puts "This Santa is #{kris.age}, #{kris.ethnicity}, and #{kris.gender}"

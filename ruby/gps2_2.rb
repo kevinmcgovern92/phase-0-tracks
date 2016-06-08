@@ -77,3 +77,11 @@ p grocery_list
   end
 
   new_list("lemonade tomatoes onions")
+
+  # Pseudocode can be much more structured, and that can help you to conceptualize code more easily before you actually start writing it. Specifically, things like thinking about methods, conditionals, input, output, etc.
+  # Arrays are easier to manipulate, but hashes allow for more meaningful organization of information.
+  # A method returns output.
+  # You can pass pretty much anything as an argument to a method - an array, a hash, a string, integer, float, etc.
+
+  #You can use naming conventions of variables shared by multiple methods to pass information between methods. This ensures that there are no "unknown variable" errors. For example, in this exercise, Marco and I called our hash grocery_list. So when we needed to use grocery_list in other methods, we passed it as an argument and the method understood that the method was interacting with a hash.
+  # How to have methods share variables/information was certainly solidified here. Although I would imagine that it will require more practice for me to truly understand how this works in every case. With regards to the specifics of this challenge, I think the only thing that still confuses me is that I sometimes mix up the methods of Array and Hash classes, which can slow things down as I double check every method.

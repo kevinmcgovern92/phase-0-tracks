@@ -1,4 +1,6 @@
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end

@@ -52,3 +52,9 @@ class AesSedai
   end
 
 end
+
+elaida = AesSedai.new("Elaida", "Red")
+elaida.seniority(140)
+elaida.act_imperious
+elaida.weave("fire")
+elaida.act_arrogant

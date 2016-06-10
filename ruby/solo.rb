@@ -19,6 +19,9 @@
       # Puts "I am an Aes Sedai of the #{@ajah} and you think to question me? No, you shall not."
 
 class AesSedai
+  attr_reader :age, :name
+  attr_accessor :ajah
+
   def initialize(name, ajah)
     @name  = name
     ajahs = ["White", "Grey", "Green", "Yellow", "Blue", "Red", "Brown", "Black" ]

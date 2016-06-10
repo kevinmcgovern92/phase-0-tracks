@@ -10,6 +10,7 @@
     # Aes Sedai stares at speaker in silence, until they avert their eyes in deference
       # Puts: *holds eye contact and smiles softly*
   # Method: Weave(element_1, *element_others)
+    # Possible arguments: Air, Earth, Fire, Water, Spirit
     # Aes Sedai weaves between 1 and 5 elements
       # IF one argument: puts "#{@name} is weaving #{element_1}! Run!"
       # IF multiple arguments: puts "#{@name} is weaving #{element_1} and #{element_others}! RUUUUUUUN!"
@@ -29,5 +30,12 @@ class AesSedai
   def seniority(age)
     @age = age
   end
+
+  def act_imperious
+    puts "*holds eye contact and smiles softly*"
+  end
+
+  def weave(element_1, *element_others)
+
 
 end

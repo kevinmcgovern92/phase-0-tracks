@@ -68,7 +68,7 @@ def interface
   aes_sedai.seniority(age)
   puts "Okay #{aes_sedai.name} of the #{aes_sedai.ajah} who is #{aes_sedai.age}, welcome to the Tower!"
   tar_valon = []
-  aes_sedai << tar_valon
+  tar_valon << aes_sedai
   p tar_valon
 end
 

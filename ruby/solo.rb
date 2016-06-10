@@ -59,23 +59,23 @@ end
 
 def interface
   iterum = ""
+  tar_valon = []
   until iterum == "no"
-    puts "Welcome to the Aes Sedai creation   matrix! What is the name of your Aes Sedai"
+    puts "Welcome to the Aes Sedai creation matrix! What is the name of your Aes Sedai"
     name = gets.chomp
-    puts "What Ajah are you a member of: Blue,  Green, Yellow, Red, White, Gray, Brown, or   Black? (Don't pick Black, please)"
+    puts "What Ajah are you a member of: Blue,  Green, Yellow, Red, White, Gray, Brown, or Black? (Don't pick Black, please)"
     ajah = gets.chomp
     aes_sedai = AesSedai.new(name, ajah)
-    puts "I know it's not polite, but how old is  your Aes Sedai?"
+    puts "I know it's not polite, but how old is your Aes Sedai?"
     age = gets.chomp.to_i
     aes_sedai.seniority(age)
     puts "Okay #{aes_sedai.name} of the #{aes_sedai .ajah} who is #{aes_sedai.age}, welcome to the Tower!"
-    tar_valon = []
     tar_valon << aes_sedai
     puts "Would you like to create another Aes Sedai?"
     iterum = gets.chomp
   end
     tar_valon.each do |sedai|
-      puts "#{name} of the #{ajah} is #{age} years old."
+      puts "#{sedai.name} of the #{sedai.ajah} is #{sedai.age} years old."
     end
 end
 

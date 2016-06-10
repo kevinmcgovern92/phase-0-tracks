@@ -50,9 +50,26 @@ class AesSedai
 
 end
 
-elaida = AesSedai.new("Elaida", "Red")
-elaida.seniority(140)
-elaida.act_imperious
-elaida.weave("fire", "water", "spirit")
-elaida.act_arrogant
-p "#{elaida.name} is #{elaida.age} years old."
+#elaida = AesSedai.new("Elaida", "Red")
+#elaida.seniority(140)
+#elaida.act_imperious
+#elaida.weave("fire", "water", "spirit")
+#elaida.act_arrogant
+#p "#{elaida.name} is #{elaida.age} years old."
+
+def interface
+  puts "Welcome to the Aes Sedai creation matrix! What is the name of your Aes Sedai"
+  name = gets.chomp
+  puts "What Ajah are you a member of: Blue, Green, Yellow, Red, White, Gray, Brown, or Black? (Don't pick Black, please)"
+  ajah = gets.chomp
+  aes_sedai = AesSedai.new(name, ajah)
+  puts "I know it's not polite, but how old is your Aes Sedai?"
+  age = gets.chomp.to_i
+  aes_sedai.seniority(age)
+  puts "Okay #{aes_sedai.name} of the #{aes_sedai.ajah} who is #{aes_sedai.age}, welcome to the Tower!"
+  tar_valon = []
+  aes_sedai << tar_valon
+  p tar_valon
+end
+
+interface

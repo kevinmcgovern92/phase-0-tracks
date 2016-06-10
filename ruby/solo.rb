@@ -40,15 +40,12 @@ class AesSedai
   end
 
   def weave(element_1, *element_others)
-    if element_others == nil
-      puts "#{@name} is channeling #{element_1}! Run!"
-    else
-      puts "#{@name} is channeling #{element_1} along with #{element_others}. RUN FOR YOUR LIVES!"
-      end
-    end
+      other_elements = element_others * ", "
+      puts "#{@name} is channeling #{other_elements} and #{element_1}. RUN FOR YOUR LIVES!"
+  end
 
   def act_arrogant
-      puts "I am #{@name} Aes Sedai of the #{@ajah} and you think to question me?!?! No, you shall not."
+      puts "I am #{@name}, Aes Sedai of the #{@ajah} Ajah, and you think to question me?!?! No, you shall not."
   end
 
 end
@@ -56,5 +53,5 @@ end
 elaida = AesSedai.new("Elaida", "Red")
 elaida.seniority(140)
 elaida.act_imperious
-elaida.weave("fire")
+elaida.weave("fire", "water", "spirit")
 elaida.act_arrogant

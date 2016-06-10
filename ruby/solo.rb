@@ -55,3 +55,4 @@ elaida.seniority(140)
 elaida.act_imperious
 elaida.weave("fire", "water", "spirit")
 elaida.act_arrogant
+p "#{elaida.name} is #{elaida.age} years old."

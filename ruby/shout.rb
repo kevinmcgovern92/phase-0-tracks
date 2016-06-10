@@ -7,3 +7,6 @@ module Shout
     words + "!!" + " :D !!"
   end
 end
+
+p Shout.yell_happily("I'm quitting my job")
+p Shout.yell_angrily("I hope all the bad things in the world happen to you and only you")

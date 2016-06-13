@@ -14,10 +14,15 @@ function reverse(string) {
   emptyString = '';
   for (var i = string.length - 1; i >= 0; i--) {
     emptyString += string[i];
-  };
+  }
+  return emptyString;
 }
 
-reverse("hello")
+console.log(reverse("hello"));
 
-var brilliant = reverse("brilliant")
+var brilliant = reverse("brilliant");
 
+if (2+2 != "fish") {
+  console.log(brilliant);
+}
+brilliant;

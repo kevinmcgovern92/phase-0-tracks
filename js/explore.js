@@ -25,4 +25,3 @@ var brilliant = reverse("brilliant");
 if (2+2 != "fish") {
   console.log(brilliant);
 }
-brilliant;

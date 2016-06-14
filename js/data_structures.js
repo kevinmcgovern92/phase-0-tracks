@@ -19,3 +19,30 @@
  }
 
  console.log(horse);
+
+function Car(make, model, year)
+{
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  keylessIgnition = true
+
+  this.reminder = function() {
+    if (this.keylessIgnition) {
+      console.log("Don't lose that key - you can't call it");
+    } else {
+      console.log("Isn't analog great?");
+    }
+    };
+
+
+  this.rev = function() {
+    console.log("vrrooooom vrrrrooooooom");
+  };
+}
+
+var firstCar = new Car("Kia", "Soul", 2012);
+console.log(firstCar);
+firstCar.rev();
+firstCar.keylessIgnition = false;
+firstCar.reminder();

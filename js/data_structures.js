@@ -46,3 +46,15 @@ console.log(firstCar);
 firstCar.rev();
 firstCar.keylessIgnition = false;
 firstCar.reminder();
+
+var secondCar = new Car("Dodge", "Charger", 1972);
+secondCar.keylessIgnition = false;
+secondCar.reminder();
+secondCar.rev();
+secondCar.rev();
+console.log(secondCar);
+
+var thirdCar = new Car("Tesla", "Model X", 2016);
+thirdCar.keylessIgnition = true;
+thirdCar.reminder();
+console.log(thirdCar)

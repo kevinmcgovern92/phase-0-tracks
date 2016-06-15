@@ -24,3 +24,4 @@ function longestPhrase (ary) {
 }
 
 longestPhrase(["long phrase", "longest phrase", "longer phrase"]);
+longestPhrase(["Lawrence of Arabia", "Citizen Cain", "Guns of Navarone", "The Dirty Dozen"]);

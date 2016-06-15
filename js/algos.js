@@ -35,22 +35,29 @@ function longestPhrase (ary) {
     // Print true/false
 
 function keyValueMatch(objOne, objTwo) {
+  var falseCounter = 0;
   for (var prop in objOne) {
     if (objOne[prop] == objTwo[prop]) {
-      console.log(true);
+      console.log(true); }
+      else falseCounter += 1;
     }
+  var size = Object.keys(objOne).length;
+  if (falseCounter == size){
+    console.log(false);
   }
 }
 
+
+
+
+
+
+
+
 horse = {'name': 'Sparky', 'age': 'unknown', 'temperment': 'happy'};
-dog = {'name': 'Fido', 'age': '9', 'temperment': 'strange'};
+dog = {'name': 'Fido', 'age': '9', 'temperment': 'happy'};
 
 keyValueMatch(horse, dog);
-
-
-
-
-
 
 
 //  longestPhrase(["long phrase", "longest phrase", "longer phrase"]);

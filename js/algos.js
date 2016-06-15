@@ -30,17 +30,22 @@ function longestPhrase (ary) {
   // Operations: Iteration
     // Initial idea is to use a FOR/IN loop with an IF conditional to assess whether key/value pairs are equivalent
     // I should be able to break this down further...
+    // Hangup: logic for finding a match works, but when trying to return false, it returns multiple times because there are multiple values that do not match.
+      // I want to say something like "ONLY IF matches == 0 print false"
     // Print true/false
 
 function keyValueMatch(objOne, objTwo) {
   for (var prop in objOne) {
     if (objOne[prop] == objTwo[prop]) {
-      console.log(true)
+      console.log(true);
     }
-
   }
 }
 
+horse = {'name': 'Sparky', 'age': 'unknown', 'temperment': 'happy'};
+dog = {'name': 'Fido', 'age': '9', 'temperment': 'strange'};
+
+keyValueMatch(horse, dog);
 
 
 
@@ -48,5 +53,5 @@ function keyValueMatch(objOne, objTwo) {
 
 
 
-  longestPhrase(["long phrase", "longest phrase", "longer phrase"]);
-longestPhrase(["Lawrence of Arabia", "Citizen Cain", "Guns of Navarone", "The Dirty Dozen"]);
+//  longestPhrase(["long phrase", "longest phrase", "longer phrase"]);
+//  longestPhrase(["Lawrence of Arabia", "Citizen Cain", "Guns of Navarone", "The Dirty Dozen"]);

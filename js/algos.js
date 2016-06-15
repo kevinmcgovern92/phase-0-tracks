@@ -23,5 +23,30 @@ function longestPhrase (ary) {
   console.log(longWord);
 }
 
-longestPhrase(["long phrase", "longest phrase", "longer phrase"]);
+
+// Pseudocode for release 1 key/value match finding
+  // Input: 2 objects
+  // Output: Boolean true/false
+  // Operations: Iteration
+    // Initial idea is to use a FOR/IN loop with an IF conditional to assess whether key/value pairs are equivalent
+    // I should be able to break this down further...
+    // Print true/false
+
+function keyValueMatch(objOne, objTwo) {
+  for (var prop in objOne) {
+    if (objOne[prop] == objTwo[prop]) {
+      console.log(true)
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+  longestPhrase(["long phrase", "longest phrase", "longer phrase"]);
 longestPhrase(["Lawrence of Arabia", "Citizen Cain", "Guns of Navarone", "The Dirty Dozen"]);

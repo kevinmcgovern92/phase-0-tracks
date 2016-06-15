@@ -99,3 +99,8 @@ end
 
 #=======================================================================
 # Reflection Section
+# The difference in the two hashes' syntax is that one uses "String" => value assignment, and the other uses symbol: value assignment
+# require_relative tells Ruby that the document it's looking for is in the same directory. If you use require, you must specify the entire path of the file, even if it's in the same directory
+# There are a number of different ways to iterate through hashes with #each methods - #each, #each_key, #each_pair, #each_value
+# virus_effects uses instance variables as arguments, and it doesn't need to
+# Scope was definitely the thing most solidified, and in close second was DRY best practices

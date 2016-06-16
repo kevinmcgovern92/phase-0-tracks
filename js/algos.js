@@ -47,9 +47,25 @@ function keyValueMatch(objOne, objTwo) {
   }
 }
 
+// Pseudocode for Release 2 function
+  // Input: Integer
+  // Output: Array of strings between 1 and 10 characters
+  // Operations:
+    // Integer argument determines the number of strings in the array
+    // Declare empty array
+    // Generate a number between 1 and 10
+    // Assign 1..10 random characters to the string
+    // Push each string into the array
+    // Prints array
 
+function randomStringGenerator(x) {
+  var stringArray = [];
+  for (var i = 0; i <= x; i++) {
 
-
+  }
+}
+// random number generation
+  // Math.floor((Math.random() * 10) + 1);
 
 
 

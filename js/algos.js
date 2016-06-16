@@ -60,12 +60,21 @@ function keyValueMatch(objOne, objTwo) {
 
 function randomStringGenerator(x) {
   var stringArray = [];
-  for (var i = 0; i <= x; i++) {
-
+  var length = Math.floor((Math.random() * 10) + 1);
+    var randomLetters = function(size) {
+      var text = "";
+      var possible = "abcdefghijklmnopqrstuvwxyz";
+      for (var i = 0; i < size; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
+      return text;
+    };
+  for (var i = 0; i < x; i++) {
+    randomString = randomLetters(length);
+    stringArray.push(randomString);
   }
+  console.log(stringArray);
 }
-// random number generation
-  // Math.floor((Math.random() * 10) + 1);
 
 
 

@@ -12,16 +12,17 @@
     // Printing becomes easier because it's the variable not "at which index is largest"
   // Print the longest string to the console
 
+// Begin longestPhrase function
 function longestPhrase (ary) {
-  // Originally set longWord = 0, but that did not return the desired input, most likely to a mix of data types
-  var longWord = "a"
+  var longWord = "";
   for (var i = ary.length - 1; i >= 0; i--) {
     if (ary[i].length > longWord.length) {
       longWord = ary[i];
     }
   }
-  console.log(longWord);
+return (longWord);
 }
+// End longestPhrase function
 
 
 // Pseudocode for release 1 key/value match finding
@@ -56,34 +57,75 @@ function keyValueMatch(objOne, objTwo) {
     // Generate a number between 1 and 10
     // Assign 1..10 random characters to the string
     // Push each string into the array
-    // Prints array
+    // Returns array
 
+// Start main function
 function randomStringGenerator(x) {
-  var stringArray = [];
-  var length = Math.floor((Math.random() * 10) + 1);
-    var randomLetters = function(size) {
-      var text = "";
-      var possible = "abcdefghijklmnopqrstuvwxyz";
-      for (var i = 0; i < size; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-      }
-      return text;
+  stringArray = [];
+  iterationArray = [];
+
+//Start iterations function
+  var iterations = function(inputValue){
+        var numberStringArray = [];
+        var number = "";
+        var possibleNumbers = "123456789";
+        for (var i = 0; i < inputValue; i++ ) {
+          number = possibleNumbers.charAt(Math.floor(Math.random() *    possibleNumbers.length));
+          var integer = Math.floor(number);
+          numberStringArray.push(integer);
+        }
+        return (numberStringArray);
     };
-  for (var i = 0; i < x; i++) {
-    randomString = randomLetters(length);
-    stringArray.push(randomString);
-  }
-  console.log(stringArray);
+// End iterations function
+
+//Start randomLetters function
+  var randomLetters = function(inputValue) {
+        var text = "";
+        var possible = "abcdefghijklmnopqrstuvwxyz";
+        for (var i = 0; i < inputValue; i++) {
+          text += possible.charAt(Math.floor(Math.random() *possible    .length));
+        }
+        return(text);
+
+  };
+// End randomLetters function
+
+// Start word creation code
+  var iterator = iterations(x);
+  (iterator);
+
+    for (var i= 0; i < x; i++) {
+
+       var newWord = randomLetters((iterator[i]));
+      stringArray.push(newWord);
+    }
+  return(stringArray);
+// End word creation code
+
 }
+// End main function
 
 
+// Begin Release 2 Question 2 code
+var evaluationArray = [];
+for (var i = 0; i < 10; i++) {
+  var inputs = randomStringGenerator(6);
+  evaluationArray.push(inputs);
+}
+for (var h = 0; h < evaluationArray.length; h++){
+  var currentLongWord = longestPhrase(evaluationArray[h]);
+  console.log(currentLongWord);
+}
+// End Release 2 Question 2 code
 
 
-horse = {'name': 'Sparky', 'age': 'unknown', 'temperment': 'happy'};
-dog = {'name': 'Fido', 'age': '9', 'temperment': 'happy'};
+// Driver code below this line
 
-keyValueMatch(horse, dog);
-
+//horse = {'name': 'Sparky', 'age': 'unknown', 'temperment': 'happy'};
+//dog = {'name': 'Fido', 'age': '9', 'temperment': 'happy'};
+//
+//keyValueMatch(horse, dog);
+//
 
 //  longestPhrase(["long phrase", "longest phrase", "longer phrase"]);
 //  longestPhrase(["Lawrence of Arabia", "Citizen Cain", "Guns of Navarone", "The Dirty Dozen"]);

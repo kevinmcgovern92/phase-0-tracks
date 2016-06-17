@@ -76,7 +76,7 @@ function randomStringGenerator(x) {
   console.log(stringArray);
 }
 
-longestPhrase(randomStringGenerator(5));
+
 
 
 horse = {'name': 'Sparky', 'age': 'unknown', 'temperment': 'happy'};

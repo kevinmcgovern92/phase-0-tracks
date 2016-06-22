@@ -1,0 +1,124 @@
+Queries for solo challenge 8.3 database
+
+1. Display the information in one table
+  Command: SELECT * FROM monsters;
+
+  Output
+    1|Ghoul|9|false|1
+    2|Wyvern|4|true|1
+    3|Fiend|2|true|1
+    4|Trolloc|7|true|2
+    5|Myrddraal|4|true|2
+    6|Mashadar|1|false|2
+    7|Orc|9|true|3
+    8|Fellbeast|3|false|3
+    9|Nazgul|2|true|3
+
+2. Update an item that meets some condition
+  Command:
+  UPDATE monsters
+  SET ubiquity = 10
+  WHERE ubiquity = 9;
+
+  Output: None (ran SELECT * FROM table to verify that changes occured)
+
+3. Display the information in both tables using one query.
+  Command:
+  SELECT * FROM monsters, series;
+
+  Output:
+  1|Ghoul|10|false|1|1|The Witcher
+  1|Ghoul|10|false|1|2|Wheel of Time
+  1|Ghoul|10|false|1|3|Lord of the Rings
+  2|Wyvern|4|true|1|1|The Witcher
+  2|Wyvern|4|true|1|2|Wheel of Time
+  2|Wyvern|4|true|1|3|Lord of the Rings
+  3|Fiend|2|true|1|1|The Witcher
+  3|Fiend|2|true|1|2|Wheel of Time
+  3|Fiend|2|true|1|3|Lord of the Rings
+  4|Trolloc|7|true|2|1|The Witcher
+  4|Trolloc|7|true|2|2|Wheel of Time
+  4|Trolloc|7|true|2|3|Lord of the Rings
+  5|Myrddraal|4|true|2|1|The Witcher
+  5|Myrddraal|4|true|2|2|Wheel of Time
+  5|Myrddraal|4|true|2|3|Lord of the Rings
+  6|Mashadar|1|false|2|1|The Witcher
+  6|Mashadar|1|false|2|2|Wheel of Time
+  6|Mashadar|1|false|2|3|Lord of the Rings
+  7|Orc|10|true|3|1|The Witcher
+  7|Orc|10|true|3|2|Wheel of Time
+  7|Orc|10|true|3|3|Lord of the Rings
+  8|Fellbeast|3|false|3|1|The Witcher
+  8|Fellbeast|3|false|3|2|Wheel of Time
+  8|Fellbeast|3|false|3|3|Lord of the Rings
+  9|Nazgul|2|true|3|1|The Witcher
+  9|Nazgul|2|true|3|2|Wheel of Time
+  9|Nazgul|2|true|3|3|Lord of the Rings
+
+OR
+
+  Command:
+    SELECT * FROM monsters, series WHERE monsters.series = series.id;
+
+  Output:
+  1|Ghoul|10|false|1|1|The Witcher
+  2|Wyvern|4|true|1|1|The Witcher
+  3|Fiend|2|true|1|1|The Witcher
+  4|Trolloc|7|true|2|2|Wheel of Time
+  5|Myrddraal|4|true|2|2|Wheel of Time
+  6|Mashadar|1|false|2|2|Wheel of Time
+  7|Orc|10|true|3|3|Lord of the Rings
+  8|Fellbeast|3|false|3|3|Lord of the Rings
+  9|Nazgul|2|true|3|3|Lord of the Rings
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+  Command: SELECT monsters.name, monsters.ubiquity, series.name FROM monsters JOIN series ON monsters.series = series.id;
+
+  Output:
+  Ghoul|10|The Witcher
+  Wyvern|4|The Witcher
+  Fiend|2|The Witcher
+  Trolloc|7|Wheel of Time
+  Myrddraal|4|Wheel of Time
+  Mashadar|1|Wheel of Time
+  Orc|10|Lord of the Rings
+  Fellbeast|3|Lord of the Rings
+  Nazgul|2|Lord of the Rings
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+  Command: DELETE FROM monsters WHERE intelligent= "false";
+
+  Output: none, but ran a SELECT * to determine that changes indeed took place.
+
+Playing with JOINs
+
+  Left Join
+    Command: SELECT ubiquity FROM monsters LEFT JOIN series ON monsters.series = series.id;
+    (Tried to use 'name' instead of 'ubiquity', but sqlite returned the error "ERROR: ambiguous column name: name" so I guess I should avoid such generic names in the future)
+
+    Output:
+      4
+      2
+      7
+      4
+      10
+      2
+
+  Inner Join
+    Command: SELECT monsters.name, monsters.ubiquity, series.name FROM monsters INNER JOIN series ON monsters.series = series.id;
+
+    Output:
+      Wyvern|4|The Witcher
+      Fiend|2|The Witcher
+      Trolloc|7|Wheel of Time
+      Myrddraal|4|Wheel of Time
+      Orc|10|Lord of the Rings
+      Nazgul|2|Lord of the Rings
+
+  Full Join
+    Command: SELECT monsters.name, series.name FROM monsters FULL JOIN series ON monsters.series = series.id;
+
+    Output: "Error: RIGHT and FULL OUTER JOINs are not currently supported"
+
+  Right Join
+    "Error: RIGHT and FULL OUTER JOINs are not currently supported"

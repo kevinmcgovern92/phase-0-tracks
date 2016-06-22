@@ -1,0 +1,16 @@
+Queries for 8.4 Many-to-many
+
+1. Join 3 tables
+  Command
+    SELECT *
+    FROM reviews
+    INNER JOIN users
+      ON reviews.user_id = users.id
+    INNER JOIN businesses
+      ON reviews.business_id = businesses.id;
+
+  Output
+    1|5|classy wedding spot|1|2|2|Mandy|Kaling|1|Grundy Hollow Wedding Chapel
+    2|1|no dogs here. 0/10|3|1|1|Bradford|Pitt|3|The Beagle Nightclub
+    3|3|prompt towing service|2|3|3|Angela|Jolie|2|Amir's Towing
+

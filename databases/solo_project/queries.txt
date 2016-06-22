@@ -89,3 +89,36 @@ OR
   Command: DELETE FROM monsters WHERE intelligent= "false";
 
   Output: none, but ran a SELECT * to determine that changes indeed took place.
+
+Playing with JOINs
+
+  Left Join
+    Command: SELECT ubiquity FROM monsters LEFT JOIN series ON monsters.series = series.id;
+    (Tried to use 'name' instead of 'ubiquity', but sqlite returned the error "ERROR: ambiguous column name: name" so I guess I should avoid such generic names in the future)
+
+    Output:
+      4
+      2
+      7
+      4
+      10
+      2
+
+  Inner Join
+    Command: SELECT monsters.name, monsters.ubiquity, series.name FROM monsters INNER JOIN series ON monsters.series = series.id;
+
+    Output:
+      Wyvern|4|The Witcher
+      Fiend|2|The Witcher
+      Trolloc|7|Wheel of Time
+      Myrddraal|4|Wheel of Time
+      Orc|10|Lord of the Rings
+      Nazgul|2|Lord of the Rings
+
+  Full Join
+    Command: SELECT monsters.name, series.name FROM monsters FULL JOIN series ON monsters.series = series.id;
+
+    Output: "Error: RIGHT and FULL OUTER JOINs are not currently supported"
+
+  Right Join
+    "Error: RIGHT and FULL OUTER JOINs are not currently supported"

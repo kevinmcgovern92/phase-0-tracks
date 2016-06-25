@@ -59,4 +59,4 @@ if decision.downcase == "yes"
 else
   puts "Well if that's all, I think we're done here."
 end
-reveal_all
+p reveal_all

@@ -4,6 +4,7 @@
 # Allow user to access/change data
 # Show the list for any given day
   # Will have to use dates in SQL
+require 'sqlite3'
 to_do_data = SQLite3::Database.new("to_do.db")
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS items(

@@ -4,11 +4,11 @@ var paragraph = document.getElementsByTagName("p");
 var navigation = document.getElementsByTagName("nav");
 
 function createBorder() {
-  navigation.style.border = "4px solid blue"
+  navigation[0].style.border = "4px solid blue"
 };
 
 function changeFont() {
-  paragraph.style.font_family: "Arial"
+  paragraph[0].style.fontFamily= "Arial"
 };
 
 createBorder();

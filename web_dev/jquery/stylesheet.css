@@ -6,3 +6,10 @@ div {
   background-color: #8A0707;
 }
 
+.vanish {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: #B4E6A8
+}

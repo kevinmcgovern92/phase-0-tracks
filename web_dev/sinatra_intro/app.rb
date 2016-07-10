@@ -48,3 +48,12 @@ end
 get '/contact' do
   "1234 Anywhere Lane, Springfield, XX"
 end
+
+get '/great_job:name' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end

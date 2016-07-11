@@ -50,6 +50,7 @@ get '/contact' do
 end
 
 get '/great_job/:name' do
+  # As line 52 is written, path does not work without query param
   name = params[:name]
   if name
     "Good job, #{name}!"

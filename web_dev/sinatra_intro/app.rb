@@ -44,3 +44,24 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+get '/contact' do
+  "1234 Anywhere Lane, Springfield, XX"
+end
+
+get '/great_job/' do
+  # As line 52 is written, path does not work without query param
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+get '/:num_one/add/:num_two' do
+  num_one = params[:num_one].to_i
+  num_two = params[:num_two].to_i
+  sum = num_two + num_two
+  "#{sum}"
+end

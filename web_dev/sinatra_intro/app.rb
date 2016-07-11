@@ -49,7 +49,7 @@ get '/contact' do
   "1234 Anywhere Lane, Springfield, XX"
 end
 
-get '/great_job/:name' do
+get '/great_job/' do
   # As line 52 is written, path does not work without query param
   name = params[:name]
   if name
